@@ -23,7 +23,7 @@ export default class Info extends Component {
   @service siteSettings;
 
   get showPM() {
-    return !this.args.topic.is_warning && this.args.topic.isPrivateMessage;
+    return !this.args.topic?.is_warning && this.args.topic?.isPrivateMessage;
   }
 
   get totalParticipants() {
@@ -46,7 +46,7 @@ export default class Info extends Component {
   }
 
   get tags() {
-    if (this.args.topic.tags) {
+    if (this.args.topic?.tags) {
       return renderTags(this.args.topic);
     }
   }
